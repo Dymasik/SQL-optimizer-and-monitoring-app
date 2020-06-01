@@ -1,0 +1,28 @@
+﻿
+@{
+	ViewData["Title"] = "AdminPanel";
+}
+
+<h2>AdminPanel</h2>
+<div class="container row">
+	<div class="col-lg-2 col-md-2 col-sm-4">
+		<ul class="nav flex-column">
+			<li class="nav-item">
+				<a class="nav-link" href="/Home/IndexDb">Indexes</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/Home/RequestDb">Requests</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-8">
+		@if (ViewBag.IsIndexView != null && ViewBag.IsIndexView) {
+			<partial name="IndexDb" />
+		} else if (ViewBag.IsRequestView != null && ViewBag.IsRequestView) {
+			<partial name="DbRequest" />
+		} else {
+			<h1>Hello to admin db page!</h1>
+		}
+
+	</div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model string;
+@{ ViewData["Title"] = "SELECT Query Optimizer";
+}
+
+@using (Html.BeginForm("OptimizeSelect", "Home", FormMethod.Post)) {
+	
+<table class="table">
+	<colgroup>
+		<col width="50%">
+		<col width="50%">
+	</colgroup>
+	<tr>
+		<th>Select</th>
+		<th>Optimized Select</th>
+	</tr>
+	<tr>
+		<td>@Html.TextArea("select", "", new { @placeholder = "Your select query", @style = "width: 100%;height: 300px;" })</td>
+		<td>@Html.TextArea("resultSelect", @Model, new { @readonly = "readonly", @style = "width: 100%;height: 300px;" })</td>
+	</tr>
+	<tr>
+		<td><input type="submit" class="btn btn-outline-success" value="Optimize" /> </td>
+		<td></td>
+	</tr>
+</table>
+}

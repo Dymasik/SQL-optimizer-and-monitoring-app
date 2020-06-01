@@ -1,0 +1,49 @@
+﻿<h2>Top @ViewBag.RequiredIndexes.Count most required indexes</h2>
+<table class="table table-dark">
+	<tr>
+		<th>Table</th>
+		<th>Equality columns</th>
+		<th>Inequality columns</th>
+		<th>Included columns</th>
+	</tr>
+	@foreach (DbIndex index in ViewBag.RequiredIndexes) {
+		<tr>
+			<td>@index.TableName</td>
+			<td>@index.EqualityColumns</td>
+			<td>@index.InequalityColumns</td>
+			<td>@index.IncludedColumns</td>
+		</tr>
+	}
+</table>
+<h2>Top @ViewBag.UnusedIndexes.Count unused indexes</h2>
+<table class="table table-dark">
+	<tr>
+		<th>Table</th>
+		<th>Equality columns</th>
+		<th>Inequality columns</th>
+		<th>Included columns</th>
+	</tr>
+	@foreach (DbIndex index in ViewBag.UnusedIndexes) {
+		<tr>
+			<td>@index.TableName</td>
+			<td>@index.EqualityColumns</td>
+			<td>@index.InequalityColumns</td>
+			<td>@index.IncludedColumns</td>
+		</tr>
+	}
+</table>
+<h2>Top @ViewBag.MostExpensiveIndexes.Count indexes that use most resources</h2>
+<table class="table table-dark">
+	<tr>
+		<th>Table</th>
+		<th>Name</th>
+	</tr>
+	@foreach (DbIndex index in ViewBag.UnusedIndexes) {
+		<tr>
+			<td>@index.TableName</td>
+			<td>@index.Name</td>
+		</tr>
+	}
+</table>
+<h2>Rebuild / defragment index script</h2>
+@Html.TextArea("resultAlterIndex", ViewBag.AlterIndexText as string, new { @readonly = "readonly", @style = "width:700px;height:250px;" })

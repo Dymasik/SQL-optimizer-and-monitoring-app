@@ -1,0 +1,28 @@
+﻿
+
+<h2>Top @ViewBag.Requests.Count most hard requests</h2>
+<table class="table table-dark">
+	@foreach (var request in ViewBag.Requests) {
+		<tr>
+			<td>@request</td>
+		</tr>
+	}
+</table>
+<h2>Active readable tables</h2>
+<table>
+	@foreach (var table in ViewBag.ReadableTables) {
+		<tr>
+			<td>@table</td>
+		</tr>
+	}
+</table>
+<h2>Active writable tables</h2>
+<table class="table table-dark">
+	@foreach (var table in ViewBag.WritableTables) {
+		<tr>
+			<td>@table</td>
+		</tr>
+	}
+</table>
+
+
