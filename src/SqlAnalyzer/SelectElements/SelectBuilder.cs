@@ -40,6 +40,8 @@ namespace SqlAnalyzer {
         private Condition GetCondition(IEnumerable<Token> tokens) {
             var firstToken = tokens.FirstOrDefault();
             Condition condition;
+            if (firstToken == null)
+                return null;
             if (firstToken.Type.GetType() == SQLTokenTypeEnum.OPERATION
                 && firstToken.Text.Equals("(")) {
                 var leftConditionTokens = tokens.Skip(1).TakeWhile(t => !(t.Type.GetType() == SQLTokenTypeEnum.OPERATION
@@ -158,8 +160,10 @@ namespace SqlAnalyzer {
         }
 
         public SelectBuilder From(IEnumerable<Token> tokens) {
+            if (!tokens.Any())
+                return this;
             var name = tokens.Where(t => t.Type.GetType() == SQLTokenTypeEnum.ID).FirstOrDefault().Text;
-            var alias = tokens.Where(t => t.Type.GetType() == SQLTokenTypeEnum.ID).Skip(1).FirstOrDefault().Text;
+            var alias = tokens.Where(t => t.Type.GetType() == SQLTokenTypeEnum.ID).Skip(1).FirstOrDefault()?.Text;
             _from = new Table(name, alias);
             return this;
         }
@@ -198,8 +202,9 @@ namespace SqlAnalyzer {
                 else
                     sb.Append($"{_columns[i]}\n");
             }
-            sb.Append($"FROM {_from}\n");
-            if (!_where.IsEmpty)
+            if (_from != null)
+                sb.Append($"FROM {_from}\n");
+            if (_where != null && !_where.IsEmpty)
                 sb.Append($"WHERE {_where}\n");
             foreach (var query in _union) {
                 sb.Append("UNION\n");

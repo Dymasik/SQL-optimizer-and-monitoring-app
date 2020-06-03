@@ -4628,6 +4628,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "SqlAnalyzer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/SqlAnalyzer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SqlAnalyzer.dll": {}
+        }
       }
     }
   },
@@ -12729,6 +12738,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "SqlAnalyzer/1.0.0": {
+      "type": "project",
+      "path": "../src/SqlAnalyzer/SqlAnalyzer.csproj",
+      "msbuildProject": "../src/SqlAnalyzer/SqlAnalyzer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12737,6 +12751,7 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
+      "SqlAnalyzer >= 1.0.0",
       "bootstrap >= 4.4.1",
       "jQuery >= 3.5.1"
     ]
@@ -12767,7 +12782,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lenovo\\source\\repos\\MssqlDatabaseAdminPanel\\src\\SqlAnalyzer\\SqlAnalyzer.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\MssqlDatabaseAdminPanel\\src\\SqlAnalyzer\\SqlAnalyzer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

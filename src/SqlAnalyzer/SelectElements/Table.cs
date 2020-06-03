@@ -27,34 +27,34 @@ namespace SqlAnalyzer.SelectElements {
         }
 
         private string ToStringBaseImpl() {
-            return _name + (!string.IsNullOrWhiteSpace(_alias) ? $" as {_alias}" : "");
+            return _name + (!string.IsNullOrWhiteSpace(_alias) ? $" AS {_alias}" : "");
         }
 
         public override string ToString() {
             if (!string.IsNullOrWhiteSpace(_name))
                 return ToStringBaseImpl();
-            return $"{_leftTable.ToString()} {_joinType} JOIN {_leftTable.ToString()} ON {_condition.ToString()}";
+            return $"{_leftTable.ToString()} {_joinType} JOIN {_rightTable.ToString()} ON {_condition.ToString()}";
         }
 
         public static IEnumerable<IEnumerable<Token>> SplitByJoin(IEnumerable<Token> tokens) {
             var list = new List<IEnumerable<Token>>();
             tokens = tokens.SkipWhile(token => !(token.Type.GetType() == SQLTokenTypeEnum.KEYWORD &&
-                Enum.GetNames(typeof(JoinType)).Contains(token.Text)));
+                Enum.GetNames(typeof(JoinType)).Contains(token.Text.ToUpper())));
             var join = tokens.TakeWhile((token, i) => !(token.Type.GetType() == SQLTokenTypeEnum.KEYWORD &&
                 Enum.GetNames(typeof(JoinType)).Contains(token.Text) && i != 0));
             while (join.Count() > 0) {
                 list.Add(join);
                 tokens = tokens.Skip(1).SkipWhile(token => !(token.Type.GetType() == SQLTokenTypeEnum.KEYWORD &&
-                    Enum.GetNames(typeof(JoinType)).Contains(token.Text)));
+                    Enum.GetNames(typeof(JoinType)).Contains(token.Text.ToUpper())));
                 join = tokens.TakeWhile((token, i) => !(token.Type.GetType() == SQLTokenTypeEnum.KEYWORD &&
-                    Enum.GetNames(typeof(JoinType)).Contains(token.Text) && i != 0));
+                    Enum.GetNames(typeof(JoinType)).Contains(token.Text.ToUpper()) && i != 0));
             }
             return list;
         }
 
         public static IEnumerable<Token> GetRootTable(IEnumerable<Token> tokens) {
             return tokens.TakeWhile(token => !(token.Type.GetType() == SQLTokenTypeEnum.KEYWORD &&
-                Enum.GetNames(typeof(JoinType)).Contains(token.Text)));
+                Enum.GetNames(typeof(JoinType)).Contains(token.Text.ToUpper())));
         }
     }
 

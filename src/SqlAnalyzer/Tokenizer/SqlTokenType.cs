@@ -8,7 +8,7 @@ namespace SqlAnalyzer {
     internal class SQLTokenType : ITokenType {
         private readonly static Dictionary<SQLTokenTypeEnum, string> _regexes = new Dictionary<SQLTokenTypeEnum, string> {
             { SQLTokenTypeEnum.KEYWORD, "\\b(?:select|from|where|group|by|order|or|and|not|exists|having|join|left|right|inner|distinct|top|count|min|max|avarage|between|as|on)\\b" },
-            { SQLTokenTypeEnum.ID, "(?:[A-Za-z][A-Za-z0-9]*\\.[A-Za-z][A-Za-z0-9]*|[A-Za-z][A-Za-z0-9]*)" },
+            { SQLTokenTypeEnum.ID, "(?:[A-Za-z][A-Za-z0-9]*\\.[A-Za-z][A-Za-z0-9]*|[A-Za-z][A-Za-z0-9]*|\\*(?!(\\s*)([0-9]+\\.[0-9]*|[0-9]+|[A-Za-z][A-Za-z0-9]*))|[A-Za-z][A-Za-z0-9]*\\.\\*)" },
             { SQLTokenTypeEnum.REAL_NUMBER, "[0-9]+\\.[0-9]*" },
             { SQLTokenTypeEnum.NUMBER, "[0-9]+" },
             { SQLTokenTypeEnum.STRING, "'[^']*'" },

@@ -71,7 +71,7 @@ using MssqlDatabaseAdminPanel.Models;
             WriteLiteral("\t\t<select id=\"types\" name=\"type\"  class=\"form-control\">\r\n\t\t\t");
             EndContext();
             BeginContext(263, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3aa7e95de2d1430fb4ab4d735bf3a7d5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04fb5c5f576a4e5e83427e9d5c9ca1bf", async() => {
                 BeginContext(300, 5, true);
                 WriteLiteral("Types");
                 EndContext();
@@ -99,7 +99,7 @@ using MssqlDatabaseAdminPanel.Models;
             WriteLiteral("\r\n\t\t\t");
             EndContext();
             BeginContext(319, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82cbc08944674ab39d26c5fefff74674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba709b28157e4aba81d4c20c3d5e9a8f", async() => {
                 BeginContext(364, 22, true);
                 WriteLiteral("Windows authentication");
                 EndContext();
@@ -128,7 +128,7 @@ using MssqlDatabaseAdminPanel.Models;
             WriteLiteral("\r\n\t\t\t");
             EndContext();
             BeginContext(400, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "387cc8bbfaef4fd8a0e25b963eb68f30", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc302929173f43a1856160ab48f66f76", async() => {
                 BeginContext(445, 17, true);
                 WriteLiteral("Connect to server");
                 EndContext();

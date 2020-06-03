@@ -5,3 +5,10 @@ C:\Users\Lenovo\source\repos\SqlAnalyzer\SqlAnalyzer\obj\Debug\SqlAnalyzer.pdb
 C:\Users\Lenovo\source\repos\SqlAnalyzer\SqlAnalyzer\bin\Debug\SqlAnalyzer.dll.config
 C:\Users\Lenovo\source\repos\SqlAnalyzer\SqlAnalyzer\bin\Debug\SqlAnalyzer.dll
 C:\Users\Lenovo\source\repos\SqlAnalyzer\SqlAnalyzer\obj\Debug\SqlAnalyzer.dll
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\obj\Debug\SqlAnalyzer.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\obj\Debug\SqlAnalyzer.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\obj\Debug\SqlAnalyzer.dll
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\obj\Debug\SqlAnalyzer.pdb
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\bin\Debug\SqlAnalyzer.dll.config
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\bin\Debug\SqlAnalyzer.dll
+C:\Users\Lenovo\source\repos\MssqlDatabaseAdminPanel\src\SqlAnalyzer\bin\Debug\SqlAnalyzer.pdb
